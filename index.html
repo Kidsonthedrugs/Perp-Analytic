@@ -46,10 +46,43 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.88);backdrop-filter:blur(30px) saturate(1.6);border-bottom:1px solid rgba(18,24,48,.6)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-.logo{display:flex;align-items:center;gap:3px;text-decoration:none}
-.logo-perp{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.4px}
-.logo-hub{font-size:13px;font-weight:900;color:#000;background:var(--orange);padding:3px 6px 2px;border-radius:4px;letter-spacing:-.3px;line-height:1;box-shadow:0 0 16px rgba(247,147,26,.3),0 2px 6px rgba(247,147,26,.2)}
-.logo-sub{color:var(--text3);font-weight:400;font-size:10px;margin-left:10px;border-left:1px solid var(--border2);padding-left:10px;letter-spacing:.3px}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.logo-perp {
+  font-size: 19px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  padding-right: 2px;
+  line-height: 1;
+}
+
+.logo-hub {
+  font-size: 17px;
+  font-weight: 900;
+  color: #000;
+  background: var(--orange);
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: -0.4px;
+  line-height: 1;
+  box-shadow: 0 0 14px rgba(247,147,26,.3), 0 2px 6px rgba(247,147,26,.25);
+}
+
+.logo-sub {
+  color: var(--text3);
+  font-weight: 400;
+  font-size: 10px;
+  margin-left: 8px;
+  border-left: 1px solid var(--border2);
+  padding-left: 8px;
+  letter-spacing: .3px;
+}
 .nav-r{display:flex;align-items:center;gap:8px}
 .nav-chip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:7px;background:var(--bg3);font-size:10px;color:var(--text2);font-weight:600;border:1px solid var(--border);font-family:'JetBrains Mono',monospace}
 .nav-chip .dot{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(0,200,120,.6);animation:blink 2s infinite}
@@ -239,9 +272,10 @@ footer{padding:24px 0 28px;border-top:1px solid var(--border);display:flex;align
 
 <nav><div class="wrap"><div class="nav-inner">
   <a href="#" class="logo">
-    <span class="logo-perp">Perp</span><span class="logo-hub">Hub</span>
-    <span class="logo-sub">Perp DEX Analytics</span>
-  </a>
+  <span class="logo-perp">Perp</span>
+  <span class="logo-hub">Hub</span>
+  <span class="logo-sub">Perp DEX Analytics</span>
+</a>
   <div class="nav-r">
     <div class="nav-chip"><div class="dot"></div><span id="cd">--:--:--</span></div>
     <button class="rbtn" id="rb" onclick="go()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>Refresh</button>
@@ -354,4 +388,5 @@ function tick(){const n=new Date(),t=new Date(n);t.setUTCDate(t.getUTCDate()+1);
 bH();bT();setInterval(tick,1e3);tick();go();
 </script>
 </body>
+
 </html>
