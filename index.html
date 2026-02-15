@@ -63,8 +63,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.88);backdrop-filte
 .hero-eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px rgba(247,147,26,.6);animation:blink 1.5s infinite}
 .hero h1{font-size:clamp(28px,5.5vw,56px);font-weight:900;letter-spacing:-2.5px;line-height:1.04;margin-bottom:16px}
 .hero h1 .line1{color:rgba(255,255,255,.85);display:block}
-.hero h1 .highlight{background:linear-gradient(135deg,var(--orange),var(--orange2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
-.hero h1 .highlight::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),transparent);border-radius:2px;opacity:.4}
+.hero h1 .highlight{background:linear-gradient(135deg,var(--orange),var(--orange2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero h1 .line2{color:rgba(255,255,255,.88);display:block;margin-top:2px}
 .hero h1 .ever{color:var(--cyan);font-style:italic}
 .hero h1 .dot{color:var(--orange)}
@@ -108,7 +107,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.88);backdrop-filte
 .dom-card{background:linear-gradient(170deg,rgba(12,16,32,.92),rgba(8,12,24,.96));border:1px solid rgba(20,28,52,.45);border-radius:14px;padding:16px 18px;margin-bottom:10px;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
 .dom-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(247,147,26,.08),transparent)}
 .dom-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.dom-hd h2{font-size:12px;font-weight:700;color:var(--text2);display:flex;align-items:center;gap:6px}
+.dom-hd h2{font-size:12px;font-weight:700;color:var(--text2)}
 .dom-hd .dim{color:var(--text3);font-weight:400;font-size:10px}
 .dom-hd .tl{font-size:10px;color:var(--text3);font-weight:500}.dom-hd .tl strong{color:var(--cyan)}
 .dom-bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:rgba(14,18,36,.9);gap:1px}
@@ -126,10 +125,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.88);backdrop-filte
 
 .t-sec{margin-bottom:18px}
 .t-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.tabs{display:flex;gap:1px;background:var(--bg3);border-radius:9px;padding:3px;border:1px solid var(--border)}
-.tb{padding:5px 11px;border-radius:7px;border:none;background:transparent;color:var(--text3);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.tabs{display:flex;gap:1px;background:var(--bg3);border-radius:9px;padding:3px;border:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tb{padding:5px 11px;border-radius:7px;border:none;background:transparent;color:var(--text3);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
 .tb:hover{color:var(--text2)}.tb.on{background:rgba(247,147,26,.08);color:var(--orange2);box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.sw{position:relative}
+.sw{position:relative;flex-shrink:0}
 .sw svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3)}
 .si{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:7px 11px 7px 30px;color:var(--text);font-family:inherit;font-size:12px;outline:none;width:180px;transition:all .2s}
 .si:focus{border-color:rgba(247,147,26,.25);background:var(--bg4)}
@@ -189,25 +188,28 @@ tr:hover .dav{transform:scale(1.06)}
 .chart-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(247,147,26,.08),transparent)}
 .chart-card h3{font-size:12px;font-weight:700;color:var(--text2);margin-bottom:14px;display:flex;align-items:center;gap:6px}
 .chart-card h3 .cdot{width:8px;height:8px;border-radius:3px}
-.bar-chart{display:flex;align-items:flex-end;gap:8px;height:220px;padding-bottom:36px;position:relative}
-.bar-chart::after{content:'';position:absolute;bottom:36px;left:0;right:0;height:1px;background:var(--border)}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:220px;padding-bottom:40px;position:relative}
+.bar-chart::after{content:'';position:absolute;bottom:40px;left:0;right:0;height:1px;background:var(--border)}
 .bar-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
 .bar-col{width:100%;min-width:20px;max-width:50px;border-radius:4px 4px 0 0;cursor:pointer;transition:all .5s cubic-bezier(.22,1,.36,1)}
 .bar-col:hover{filter:brightness(1.3)}
-.bar-label{font-size:9px;color:var(--text2);font-weight:600;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:64px;position:absolute;bottom:-30px;left:50%;transform:translateX(-50%)}
-.bar-val{font-size:9px;color:var(--text);font-weight:700;font-family:'JetBrains Mono',monospace;position:absolute;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.bar-label{font-size:9px;color:var(--text2);font-weight:600;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70px;position:absolute;bottom:-34px;left:50%;transform:translateX(-50%)}
+.bar-val{font-size:9px;color:var(--text);font-weight:700;font-family:'JetBrains Mono',monospace;position:absolute;top:-18px;left:50%;transform:translateX(-50%);white-space:nowrap}
 
-/* Side-by-side panels (desktop) */
-.side-panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+/* Side-by-side panels */
+.side-panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .side-panels .panel{margin-bottom:16px}
 
-.fee-tbl{min-width:400px}
+/* Fee table — allow wrapping for long descriptions */
+.fee-tbl{min-width:440px}
 .fee-tbl td,.fee-tbl th{padding:8px 12px}
-.fee-val{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--text2)}
+.fee-tbl td{white-space:normal;word-break:break-word}
+.fee-val{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--text2);line-height:1.5}
 .fee-val.free{color:var(--green)}
 .fee-val.neg{color:var(--cyan)}
+.fee-note{font-size:9px;color:var(--text3);font-weight:400;display:block;margin-top:2px;font-family:'Inter',sans-serif}
 
-.users-tbl{min-width:400px}
+.users-tbl{min-width:380px}
 .users-tbl td,.users-tbl th{padding:8px 12px}
 
 .queue-list{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0}
@@ -229,53 +231,63 @@ footer{padding:20px 0 24px;border-top:1px solid var(--border);display:flex;align
 
 .tip{position:fixed;padding:5px 9px;border-radius:6px;background:rgba(14,18,36,.95);border:1px solid var(--border2);font-size:10px;color:var(--text);pointer-events:none;z-index:200;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.5);display:none;font-weight:600;font-family:'JetBrains Mono',monospace}
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .snap-grid{grid-template-columns:repeat(2,1fr)}
   .side-panels{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .wrap{padding:0 14px}
-  .hero{padding:32px 0 14px}
-  .hero h1{font-size:clamp(24px,7vw,36px);letter-spacing:-1.5px}
-  .hero-desc{font-size:13px;line-height:1.7}
-  .hero-tagline{font-size:14px}
+  .wrap{padding:0 12px}
+  .hero{padding:28px 0 12px}
+  .hero h1{font-size:clamp(22px,7vw,34px);letter-spacing:-1.2px}
+  .hero-desc{font-size:13px;line-height:1.65}
+  .hero-tagline{font-size:13px}
   .hero-eyebrow{font-size:10px;padding:4px 10px 4px 6px}
-  .features{gap:5px;margin-top:14px}
-  .feat{font-size:10px;padding:4px 9px}
+  .features{gap:5px;margin-top:12px}
+  .feat{font-size:10px;padding:4px 8px}
   .status-row{gap:5px}
-  .sr-chip{font-size:9px;padding:3px 7px}
+  .sr-chip{font-size:9px;padding:3px 6px}
+  .snap-panel{padding:14px}
   .snap-grid{grid-template-columns:1fr 1fr;gap:8px}
   .mc{padding:12px 10px}
   .mc-value{font-size:clamp(16px,4.5vw,22px)}
-  .mc-label{font-size:8px;margin-bottom:6px}
+  .mc-label{font-size:8px;margin-bottom:5px}
   .mc-sub{font-size:9px}
-  .dom-leg{gap:3px 10px}
+  .dom-card{padding:14px}
+  .dom-leg{gap:3px 8px}
   .dli{font-size:9px}
   .nav-chip{display:none}
   .logo-sub{display:none}
   .si{width:100%}
+  .sw{width:100%;flex-shrink:1}
   .t-bar{flex-direction:column;align-items:stretch}
-  .sw{width:100%}
-  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .tb{padding:5px 10px;font-size:10px;white-space:nowrap}
-  table.main-tbl{min-width:680px}
-  td,thead th{padding:8px 10px;font-size:11px}
+  table.main-tbl{min-width:640px}
+  td{padding:8px 8px;font-size:11px}
+  thead th{padding:8px 8px;font-size:8px}
   .dc{gap:6px}
   .dav{width:26px;height:26px;font-size:12px;border-radius:6px}
   .dnf h4{font-size:11px}
-  .bar-chart{height:180px;gap:5px;padding-bottom:32px}
-  .bar-label{font-size:7px;max-width:44px;bottom:-26px}
+  .dnf span{font-size:8px}
+  .bar-chart{height:170px;gap:4px;padding-bottom:34px}
+  .bar-label{font-size:7px;max-width:44px;bottom:-28px}
   .bar-val{font-size:7px;top:-14px}
-  .side-panels{grid-template-columns:1fr}
+  .bar-chart::after{bottom:34px}
+  .side-panels{grid-template-columns:1fr;gap:0}
+  .panel{padding:14px}
+  .panel-hd h2{font-size:12px}
   footer{flex-direction:column;align-items:flex-start;gap:10px}
+  .otc-tbl{min-width:500px}
+  .fee-tbl{min-width:380px}
+  .users-tbl{min-width:340px}
 }
 @media(max-width:400px){
   .snap-grid{grid-template-columns:1fr}
-  .hero h1{font-size:24px;letter-spacing:-1px}
+  .hero h1{font-size:22px;letter-spacing:-.8px}
   .hero-desc{font-size:12px}
   .features{flex-direction:column}
   .feat{justify-content:center}
+  .tabs{width:100%}
+  .tb{padding:5px 8px;font-size:10px}
 }
 </style>
 </head>
@@ -326,14 +338,14 @@ footer{padding:20px 0 24px;border-top:1px solid var(--border);display:flex;align
   <div class="panel">
     <div class="panel-hd"><h2>User Statistics</h2><span style="font-size:10px;color:var(--text3)">Est. total & 30d active</span></div>
     <div class="tw"><div class="tsc"><table class="users-tbl">
-      <thead><tr><th style="width:32px;text-align:center">#</th><th>Protocol</th><th>Total Users</th><th>30d Active</th></tr></thead>
+      <thead><tr><th style="width:30px;text-align:center">#</th><th>Protocol</th><th>Total Users</th><th>30d Active</th></tr></thead>
       <tbody id="usersBody"></tbody>
     </table></div></div>
   </div>
   <div class="panel">
     <div class="panel-hd"><h2>Fee Comparison</h2><span style="font-size:10px;color:var(--text3)">Maker / Taker rates</span></div>
     <div class="tw"><div class="tsc"><table class="fee-tbl">
-      <thead><tr><th style="width:32px;text-align:center">#</th><th>Protocol</th><th>Maker Fee</th><th>Taker Fee</th></tr></thead>
+      <thead><tr><th style="width:30px;text-align:center">#</th><th>Protocol</th><th>Maker Fee</th><th>Taker Fee</th></tr></thead>
       <tbody id="feeBody"></tbody>
     </table></div></div>
   </div>
@@ -342,7 +354,7 @@ footer{padding:20px 0 24px;border-top:1px solid var(--border);display:flex;align
 <!-- OTC -->
 <section class="wrap"><div class="panel">
   <div class="panel-hd"><h2>OTC Points Pricing</h2><span style="font-size:10px;color:var(--text3)" id="otcDate"></span></div>
-  <div class="tw"><div class="tsc"><table class="otc-tbl"><thead><tr><th style="width:32px;text-align:center">#</th><th>Protocol</th><th>Labels</th><th>OTC Price Range</th><th>Mid Price</th></tr></thead><tbody id="otcBody"></tbody></table></div></div>
+  <div class="tw"><div class="tsc"><table class="otc-tbl"><thead><tr><th style="width:30px;text-align:center">#</th><th>Protocol</th><th>Labels</th><th>OTC Price Range</th><th>Mid Price</th></tr></thead><tbody id="otcBody"></tbody></table></div></div>
 </div></section>
 
 <!-- Volume Chart -->
@@ -410,19 +422,19 @@ const USER_DATA=[
   {name:'TreadFi',total:3582,active:1749},
 ];
 
+// CORRECTED FEE DATA
 const FEE_DATA=[
-  {name:'Paradex',maker:'0%',taker:'0.02%',mfree:true},
-  {name:'StandX',maker:'0.01%',taker:'0.04%'},
-  {name:'edgeX',maker:'0.01%',taker:'0.04%'},
-  {name:'Liquid Trading',maker:'-0% / -0.03%',taker:'-0% / -0.03%',mn:true},
-  {name:'Lighter',maker:'0%',taker:'0%',mfree:true,tfree:true},
-  {name:'Variational',maker:'0%',taker:'0%',mfree:true,tfree:true},
-  {name:'Ethereal',maker:'0%',taker:'0%',mfree:true,tfree:true},
-  {name:'Pacifica',maker:'0.02%',taker:'0.02%'},
-  {name:'Nado',maker:'-0.008%',taker:'rebate',mn:true},
-  {name:'Ostium',maker:'—',taker:'0.015% (crypto)'},
-  {name:'Hotstuff',maker:'-0.02%',taker:'rebate',mn:true},
-  {name:'Dreamcash',maker:'-0.01%',taker:'-0.035%',mn:true},
+  {name:'Paradex',       maker:'0%',        makerNote:'retail',     taker:'0%',          takerNote:'retail',    mfree:true, tfree:true},
+  {name:'StandX',        maker:'0.01%',     makerNote:null,         taker:'0.04%',       takerNote:null},
+  {name:'edgeX',         maker:'0.01%',     makerNote:null,         taker:'0.04%',       takerNote:null},
+  {name:'Liquid Trading',maker:'~0%',       makerNote:'maker on HL',taker:'-0.003% rebate',takerNote:'maker HL / 0.009% taker', mn:false, tn:true},
+  {name:'Variational',   maker:'0%',        makerNote:null,         taker:'0%',          takerNote:null,        mfree:true, tfree:true},
+  {name:'Ethereal',      maker:'0%',        makerNote:null,         taker:'0.03%',       takerNote:null,        mfree:true},
+  {name:'Pacifica',      maker:'0.02%',     makerNote:null,         taker:'0.04%',       takerNote:null},
+  {name:'Nado',          maker:'-0.008%',   makerNote:'rebate',     taker:'0.02%',       takerNote:null,        mn:true},
+  {name:'Ostium',        maker:'0.03%',     makerNote:'crypto',     taker:'0.03–0.05%',  takerNote:'RWA / 0.10%'},
+  {name:'Hotstuff',      maker:'-0.002%',   makerNote:'rebate',     taker:'0.03%',       takerNote:null,        mn:true},
+  {name:'Dreamcash',     maker:'~0.01%',    makerNote:null,         taker:'~0.035%',     takerNote:null},
 ];
 
 const OTC_DATA=[
@@ -467,20 +479,22 @@ function renderUsers(){
 
 function renderFees(){
   document.getElementById('feeBody').innerHTML=FEE_DATA.map((d,i)=>{
-    const mC=d.mfree?'fee-val free':d.mn?'fee-val neg':'fee-val';
-    const tC=d.tfree?'fee-val free':'fee-val';
+    const mCls=d.mfree?'fee-val free':d.mn?'fee-val neg':'fee-val';
+    const tCls=d.tfree?'fee-val free':d.tn?'fee-val neg':'fee-val';
+    const mNote=d.makerNote?`<span class="fee-note">${d.makerNote}</span>`:'';
+    const tNote=d.takerNote?`<span class="fee-note">${d.takerNote}</span>`:'';
     return`<tr>
       <td style="text-align:center"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);font-weight:700">${i+1}</span></td>
       <td><strong style="font-size:11px">${d.name}</strong></td>
-      <td><span class="${mC}">${d.maker}</span></td>
-      <td><span class="${tC}">${d.taker}</span></td>
+      <td><span class="${mCls}">${d.maker}</span>${mNote}</td>
+      <td><span class="${tCls}">${d.taker}</span>${tNote}</td>
     </tr>`;
   }).join('');
 }
 
 function renderOTC(){const now=new Date(),pad=x=>(''+x).padStart(2,'0');document.getElementById('otcDate').textContent=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} 00:00 UTC`;document.getElementById('otcBody').innerHTML=OTC_DATA.map((d,i)=>{const mid=(d.low+d.high)/2;const tH=d.tags.length?`<div class="tags">${d.tags.map(t=>{const m=TAG_MAP[t];return m?`<span class="tag ${m.cls}">${m.label}</span>`:''}).join('')}</div>`:'<span style="color:var(--text3);font-size:10px">—</span>';return`<tr><td style="text-align:center"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);font-weight:700">${i+1}</span></td><td><strong style="font-size:11px">${d.name}</strong></td><td>${tH}</td><td><div class="price-range">${fmP(d.low)}<span class="sep">—</span>${fmP(d.high)}</div></td><td><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--green)">${fmP(mid)}</span></td></tr>`}).join('')}
 
-function renderCharts(){const vs=[...D].filter(d=>d.volume).sort((a,b)=>b.volume-a.volume).slice(0,10);const mx=vs[0]?.volume||1;document.getElementById('volChart').innerHTML=vs.map(d=>{const h=Math.max((d.volume/mx)*160,8);return`<div class="bar-item"><div class="bar-val">${fm(d.volume)}</div><div class="bar-col" style="height:${h}px;background:linear-gradient(180deg,var(--cyan),rgba(0,229,200,.25))" data-tip="${d.name}: ${fm(d.volume)}" onmouseenter="sT(event,this)" onmouseleave="hT()"></div><div class="bar-label">${d.name}</div></div>`}).join('')}
+function renderCharts(){const vs=[...D].filter(d=>d.volume).sort((a,b)=>b.volume-a.volume).slice(0,10);const mx=vs[0]?.volume||1;document.getElementById('volChart').innerHTML=vs.map(d=>{const h=Math.max((d.volume/mx)*155,8);return`<div class="bar-item"><div class="bar-val">${fm(d.volume)}</div><div class="bar-col" style="height:${h}px;background:linear-gradient(180deg,var(--cyan),rgba(0,229,200,.25))" data-tip="${d.name}: ${fm(d.volume)}" onmouseenter="sT(event,this)" onmouseleave="hT()"></div><div class="bar-label">${d.name}</div></div>`}).join('')}
 
 function renderAll(){renderM();renderD();bH();bT();renderT();renderQueue();renderUsers();renderFees();renderOTC();renderCharts()}
 function sT(e,el){const t=document.getElementById('tip');t.textContent=el.dataset.tip;t.style.display='block';const r=el.getBoundingClientRect();t.style.left=Math.min(r.left+r.width/2-t.offsetWidth/2,innerWidth-t.offsetWidth-8)+'px';t.style.top=r.top-28+'px'}
